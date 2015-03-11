@@ -27,7 +27,7 @@
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
-    UINib *nib2 = [UINib nibWithNibName:@"SearchLabel" bundle:nil];
+    UINib *nib2 = [UINib nibWithNibName:@"SearchFieldTableViewCell" bundle:nil];
     [self.tableview registerNib:nib2 forCellReuseIdentifier:@"celulaPesquisa"];
     
     iTunesManager *itunes = [iTunesManager sharedInstance];
@@ -49,7 +49,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [midias count];
+    return [midias count]+1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,7 +60,7 @@
     
     TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
     
-    Filme *filme = [midias objectAtIndex:indexPath.row];
+    Filme *filme = [midias objectAtIndex:indexPath.row-1];
     
     [celula.nome setText:filme.nome];
     [celula.tipo setText:@"Filme"];
