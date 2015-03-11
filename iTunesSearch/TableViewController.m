@@ -27,6 +27,9 @@
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
+    UINib *nib2 = [UINib nibWithNibName:@"SearchLabel" bundle:nil];
+    [self.tableview registerNib:nib2 forCellReuseIdentifier:@"celulaPesquisa"];
+    
     iTunesManager *itunes = [iTunesManager sharedInstance];
     midias = [itunes buscarMidias:@"Apple"];
     
@@ -50,6 +53,11 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row == 0){
+        TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPesquisa"];
+        return celula;
+    }
+    
     TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
     
     Filme *filme = [midias objectAtIndex:indexPath.row];
@@ -57,12 +65,18 @@
     [celula.nome setText:filme.nome];
     [celula.tipo setText:@"Filme"];
     [celula.genero setText:filme.genero];
+    [celula.pais setText:filme.pais];
+    NSString *duracaoString = [NSString stringWithFormat:@"%@",filme.duracao];
+    [celula.duracao setText:duracaoString];
     
     return celula;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70;
+    if(indexPath.row == 0){
+        return 50;
+    }
+    return 120;
 }
 
 
