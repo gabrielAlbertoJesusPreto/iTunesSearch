@@ -24,17 +24,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [_buttonBusca setTitle:NSLocalizedString(@"Buscar",nil) forState:UIControlStateNormal];
+    
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
-    UINib *nib2 = [UINib nibWithNibName:@"SearchFieldTableViewCell" bundle:nil];
-    [self.tableview registerNib:nib2 forCellReuseIdentifier:@"celulaPesquisa"];
-    
     iTunesManager *itunes = [iTunesManager sharedInstance];
-    midias = [itunes buscarMidias:@"Apple"];
+    //midias = [itunes buscarMidias:@"Apple"];
     
 #warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
-    self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 15.f)];
+    //self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 15.f)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,18 +48,13 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [midias count]+1;
+    return [midias count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == 0){
-        TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPesquisa"];
-        return celula;
-    }
-    
     TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
     
-    Filme *filme = [midias objectAtIndex:indexPath.row-1];
+    Filme *filme = [midias objectAtIndex:indexPath.row];
     
     [celula.nome setText:filme.nome];
     [celula.tipo setText:@"Filme"];
@@ -73,11 +67,13 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == 0){
-        return 50;
-    }
     return 120;
 }
 
-
+- (IBAction)buscar:(id)sender {
+    iTunesManager *itunes = [iTunesManager sharedInstance];
+    midias = [itunes buscarMidias:_textBusca.text];
+    [self.tableview reloadData];
+    
+}
 @end

@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewController">
             <connections>
+                <outlet property="buttonBusca" destination="RWV-2N-VeH" id="Eoo-H3-sSa"/>
                 <outlet property="tableview" destination="z24-IP-C1d" id="fiF-7d-ri3"/>
+                <outlet property="textBusca" destination="pVY-Sg-a28" id="AE5-8C-NMt"/>
                 <outlet property="view" destination="z24-IP-C1d" id="NXu-VO-9o4"/>
             </connections>
         </placeholder>
@@ -15,11 +17,42 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <view key="tableHeaderView" contentMode="scaleToFill" id="Zyx-6p-oKI">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVY-Sg-a28">
+                        <rect key="frame" x="14" y="8" width="415" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                            <rect key="frame" x="11" y="14" width="241" height="30"/>
+                        </variation>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWV-2N-VeH">
+                        <rect key="frame" x="102" y="14" width="70" height="30"/>
+                        <state key="normal" title="Buscar">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                            <rect key="frame" x="252" y="14" width="70" height="30"/>
+                        </variation>
+                        <connections>
+                            <action selector="buscar:" destination="-1" eventType="touchUpInside" id="oVf-ih-bGb"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            </view>
             <connections>
                 <outlet property="dataSource" destination="-1" id="grn-Rq-4Ux"/>
                 <outlet property="delegate" destination="-1" id="M2x-yu-OMO"/>
             </connections>
-            <point key="canvasLocation" x="-135" y="440"/>
+            <point key="canvasLocation" x="-91" y="427"/>
         </tableView>
+        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="WzX-pa-KEs">
+            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </activityIndicatorView>
     </objects>
 </document>
