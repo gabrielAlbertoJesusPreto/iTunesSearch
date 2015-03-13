@@ -8,6 +8,7 @@
 
 #import "iTunesManager.h"
 #import "Entidades/Filme.h"
+#import <UIKit/UIKit.h>"
 
 @implementation iTunesManager
 
@@ -38,6 +39,19 @@ static bool isFirstAccess = YES;
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;
+    
+    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"^[ A-Z0-9a-z._%+-]{2,100}$" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    NSTextCheckingResult *match = [regular firstMatchInString:termo options:0 range:NSMakeRange(0, [termo length])];
+
+    if (!match) {
+        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Nao foi possível realizar a busca, verifique os termos que voce utilizou na busca." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alerta show];
+        return nil;
+    }
+    
+    
+    
     NSDictionary *resultado = [NSJSONSerialization JSONObjectWithData:jsonData
                                                               options:NSJSONReadingMutableContainers
                                                                 error:&error];

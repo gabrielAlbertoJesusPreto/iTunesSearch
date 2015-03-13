@@ -10,6 +10,7 @@
 		5E05C3F71AB084F400F4E321 /* SearchFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E05C3F51AB084F400F4E321 /* SearchFieldTableViewCell.m */; };
 		5E05C3F81AB084F400F4E321 /* SearchFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E05C3F61AB084F400F4E321 /* SearchFieldTableViewCell.xib */; };
 		5E05C3FB1AB08E7000F4E321 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E05C3FD1AB08E7000F4E321 /* Localizable.strings */; };
+		5E50E6CE1AB3116800299FDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E50E6CD1AB3116800299FDF /* UIKit.framework */; };
 		92C21CB61AAE757A0052ABE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CB51AAE757A0052ABE6 /* main.m */; };
 		92C21CB91AAE757A0052ABE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CB81AAE757A0052ABE6 /* AppDelegate.m */; };
 		92C21CBC1AAE757A0052ABE6 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CBB1AAE757A0052ABE6 /* TableViewController.m */; };
@@ -40,6 +41,7 @@
 		5E05C3FE1AB08E7600F4E321 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E05C3FF1AB08EAC00F4E321 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E05C4001AB08EBE00F4E321 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5E50E6CD1AB3116800299FDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		92C21CB01AAE757A0052ABE6 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C21CB41AAE757A0052ABE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C21CB51AAE757A0052ABE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E50E6CE1AB3116800299FDF /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 		92C21CA71AAE757A0052ABE6 = {
 			isa = PBXGroup;
 			children = (
+				5E50E6CD1AB3116800299FDF /* UIKit.framework */,
 				92C21CB21AAE757A0052ABE6 /* iTunesSearch */,
 				92C21CCC1AAE757A0052ABE6 /* iTunesSearchTests */,
 				92C21CB11AAE757A0052ABE6 /* Products */,
