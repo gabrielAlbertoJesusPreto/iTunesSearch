@@ -35,12 +35,12 @@ static bool isFirstAccess = YES;
         termo = @"";
     }
     
-    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=movie", termo];
+    NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=all", termo];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     NSError *error;
     
-    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"^[ A-Z0-9a-z._%+-]{2,100}$" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"^[ A-Z0-9a-z._%+-]{1,100}$" options:NSRegularExpressionCaseInsensitive error:&error];
     
     NSTextCheckingResult *match = [regular firstMatchInString:termo options:0 range:NSMakeRange(0, [termo length])];
 
@@ -65,6 +65,7 @@ static bool isFirstAccess = YES;
     
     for (NSDictionary *item in resultados) {
         Filme *filme = [[Filme alloc] init];
+        [filme setMidia:[item objectForKey:@"kind"]];
         [filme setNome:[item objectForKey:@"trackName"]];
         [filme setTrackId:[item objectForKey:@"trackId"]];
         [filme setArtista:[item objectForKey:@"artistName"]];

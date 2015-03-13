@@ -33,6 +33,7 @@
     
 #warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
     //self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 15.f)];
+    self.tableview.contentInset = UIEdgeInsetsMake(20.0, 0, 0, 0);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +58,7 @@
     
     
     [celula.nome setText:filme.nome];
-    [celula.tipo setText:@"Filme"];
+    [celula.tipo setText:filme.midia];
     [celula.genero setText:filme.genero];
     [celula.pais setText:filme.pais];
     NSString *duracaoString = [NSString stringWithFormat:@"%@",filme.duracao];
@@ -73,7 +74,9 @@
 - (IBAction)buscar:(id)sender {
     iTunesManager *itunes = [iTunesManager sharedInstance];
     midias = [itunes buscarMidias:_textBusca.text];
+    [self.textBusca endEditing:true];
     [self.tableview reloadData];
     
 }
+
 @end
