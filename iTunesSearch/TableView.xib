@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewController">
             <connections>
                 <outlet property="buttonBusca" destination="RWV-2N-VeH" id="Eoo-H3-sSa"/>
+                <outlet property="headerSearch" destination="Zyx-6p-oKI" id="3Ef-VD-LHo"/>
                 <outlet property="tableview" destination="z24-IP-C1d" id="fiF-7d-ri3"/>
                 <outlet property="textBusca" destination="pVY-Sg-a28" id="AE5-8C-NMt"/>
                 <outlet property="view" destination="z24-IP-C1d" id="NXu-VO-9o4"/>
@@ -21,21 +22,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVY-Sg-a28">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVY-Sg-a28">
                         <rect key="frame" x="14" y="8" width="415" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="217" id="CCT-6n-86P"/>
+                            <constraint firstAttribute="height" constant="30" id="I0r-en-zoJ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
-                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="8" y="47" width="241" height="30"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CCT-6n-86P"/>
+                                <exclude reference="I0r-en-zoJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="CCT-6n-86P"/>
+                                <include reference="I0r-en-zoJ"/>
+                            </mask>
                         </variation>
                     </textField>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWV-2N-VeH">
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWV-2N-VeH">
                         <rect key="frame" x="102" y="14" width="70" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="77" id="Jzb-6P-GQu"/>
+                            <constraint firstAttribute="height" constant="30" id="oFt-Ql-GyV"/>
+                        </constraints>
                         <state key="normal" title="Buscar">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="252" y="46" width="70" height="30"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Jzb-6P-GQu"/>
+                                <exclude reference="oFt-Ql-GyV"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Jzb-6P-GQu"/>
+                                <include reference="oFt-Ql-GyV"/>
+                            </mask>
                         </variation>
                         <connections>
                             <action selector="buscar:" destination="-1" eventType="touchUpInside" id="oVf-ih-bGb"/>
@@ -43,6 +70,31 @@
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="RWV-2N-VeH" firstAttribute="top" secondItem="Zyx-6p-oKI" secondAttribute="top" constant="46" id="Xwb-wi-fET"/>
+                    <constraint firstAttribute="bottom" secondItem="pVY-Sg-a28" secondAttribute="bottom" constant="28" id="YPS-ad-61t"/>
+                    <constraint firstItem="pVY-Sg-a28" firstAttribute="top" secondItem="Zyx-6p-oKI" secondAttribute="top" constant="47" id="hTl-e9-j1z"/>
+                    <constraint firstAttribute="trailing" secondItem="RWV-2N-VeH" secondAttribute="trailing" constant="20" id="iXH-1x-ckc"/>
+                    <constraint firstItem="pVY-Sg-a28" firstAttribute="leading" secondItem="Zyx-6p-oKI" secondAttribute="leading" constant="8" id="voO-OY-nZb"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="YPS-ad-61t"/>
+                        <exclude reference="hTl-e9-j1z"/>
+                        <exclude reference="voO-OY-nZb"/>
+                        <exclude reference="Xwb-wi-fET"/>
+                        <exclude reference="iXH-1x-ckc"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="constraints">
+                        <include reference="YPS-ad-61t"/>
+                        <include reference="hTl-e9-j1z"/>
+                        <include reference="voO-OY-nZb"/>
+                        <include reference="Xwb-wi-fET"/>
+                        <include reference="iXH-1x-ckc"/>
+                    </mask>
+                </variation>
             </view>
             <connections>
                 <outlet property="dataSource" destination="-1" id="grn-Rq-4Ux"/>

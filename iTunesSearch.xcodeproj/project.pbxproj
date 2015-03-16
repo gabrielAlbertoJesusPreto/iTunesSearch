@@ -11,6 +11,9 @@
 		5E05C3F81AB084F400F4E321 /* SearchFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E05C3F61AB084F400F4E321 /* SearchFieldTableViewCell.xib */; };
 		5E05C3FB1AB08E7000F4E321 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E05C3FD1AB08E7000F4E321 /* Localizable.strings */; };
 		5E50E6CE1AB3116800299FDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E50E6CD1AB3116800299FDF /* UIKit.framework */; };
+		5ED8CE5A1AB5300200CEDEE4 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8CE591AB5300200CEDEE4 /* Music.m */; };
+		5ED8CE5D1AB5301A00CEDEE4 /* Podcast.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8CE5C1AB5301A00CEDEE4 /* Podcast.m */; };
+		5ED8CE601AB5302600CEDEE4 /* Ebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8CE5F1AB5302600CEDEE4 /* Ebook.m */; };
 		92C21CB61AAE757A0052ABE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CB51AAE757A0052ABE6 /* main.m */; };
 		92C21CB91AAE757A0052ABE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CB81AAE757A0052ABE6 /* AppDelegate.m */; };
 		92C21CBC1AAE757A0052ABE6 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CBB1AAE757A0052ABE6 /* TableViewController.m */; };
@@ -42,6 +45,12 @@
 		5E05C3FF1AB08EAC00F4E321 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E05C4001AB08EBE00F4E321 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E50E6CD1AB3116800299FDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5ED8CE581AB5300200CEDEE4 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		5ED8CE591AB5300200CEDEE4 /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
+		5ED8CE5B1AB5301A00CEDEE4 /* Podcast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Podcast.h; sourceTree = "<group>"; };
+		5ED8CE5C1AB5301A00CEDEE4 /* Podcast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Podcast.m; sourceTree = "<group>"; };
+		5ED8CE5E1AB5302600CEDEE4 /* Ebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ebook.h; sourceTree = "<group>"; };
+		5ED8CE5F1AB5302600CEDEE4 /* Ebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ebook.m; sourceTree = "<group>"; };
 		92C21CB01AAE757A0052ABE6 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C21CB41AAE757A0052ABE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C21CB51AAE757A0052ABE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -164,6 +173,12 @@
 			children = (
 				92C21CE61AAE858E0052ABE6 /* Filme.h */,
 				92C21CE71AAE858E0052ABE6 /* Filme.m */,
+				5ED8CE581AB5300200CEDEE4 /* Music.h */,
+				5ED8CE591AB5300200CEDEE4 /* Music.m */,
+				5ED8CE5B1AB5301A00CEDEE4 /* Podcast.h */,
+				5ED8CE5C1AB5301A00CEDEE4 /* Podcast.m */,
+				5ED8CE5E1AB5302600CEDEE4 /* Ebook.h */,
+				5ED8CE5F1AB5302600CEDEE4 /* Ebook.m */,
 			);
 			name = Entidades;
 			sourceTree = "<group>";
@@ -272,8 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED8CE601AB5302600CEDEE4 /* Ebook.m in Sources */,
+				5ED8CE5A1AB5300200CEDEE4 /* Music.m in Sources */,
 				92C21CBC1AAE757A0052ABE6 /* TableViewController.m in Sources */,
 				92C21CDB1AAE75B30052ABE6 /* iTunesManager.m in Sources */,
+				5ED8CE5D1AB5301A00CEDEE4 /* Podcast.m in Sources */,
 				92C21CB91AAE757A0052ABE6 /* AppDelegate.m in Sources */,
 				92C21CE81AAE858E0052ABE6 /* Filme.m in Sources */,
 				92C21CE11AAE76930052ABE6 /* TableViewCell.m in Sources */,
